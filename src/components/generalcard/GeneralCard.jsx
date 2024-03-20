@@ -6,7 +6,7 @@ export default class GeneralCard extends Component {
     return (
       <div className={styles.container}>
         <div className={styles.cont_image}>
-          <img src={`${image1}`} />
+          <img src={image1} />
           <span className={styles.discount}>
             <p>10% Off</p>
           </span>
