@@ -43,7 +43,9 @@ a {
   background-color: #ddd;
   border-radius: 50%;
 }
-
+.icon svg {
+  cursor: pointer;
+}
 /* btn toggle */
 button {
   width: 30px;

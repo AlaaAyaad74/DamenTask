@@ -1,12 +1,16 @@
 import React, { Component } from "react";
 import styles from "./Header.module.scss";
+import Cart from "../cart/Cart";
 export default class Header extends Component {
   constructor() {
     super();
-    this.state = { open: false };
+    this.state = { openLinks: false, openCart: false };
   }
   toggleLinks() {
-    this.setState({ open: !this.state.open });
+    this.setState({ openLinks: !this.state.openLinks });
+  }
+  toggleCart() {
+    this.setState({ openCart: !this.state.openCart });
   }
   render() {
     const links = [
@@ -61,7 +65,7 @@ export default class Header extends Component {
 
           <div
             className={
-              this.state.open
+              this.state.openLinks
                 ? `${(styles.links, styles.active)}`
                 : `${styles.links}`
             }
@@ -102,7 +106,11 @@ export default class Header extends Component {
             </svg>{" "}
           </span>
 
-          <span className={styles.icon}>
+          <span
+            style={{ position: "relative" }}
+            className={styles.icon}
+            onClick={() => this.toggleCart()}
+          >
             <svg
               width="24"
               height="24"
@@ -146,6 +154,11 @@ export default class Header extends Component {
                 </clipPath>
               </defs>
             </svg>
+            {this.state.openCart ? (
+              <Cart toggleCart={() => this.toggleCart} />
+            ) : (
+              ""
+            )}
           </span>
           <span className={styles.icon}>
             <svg
