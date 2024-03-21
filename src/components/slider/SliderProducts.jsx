@@ -45,6 +45,7 @@ export default class SliderProduct extends Component {
     };
     return (
       <div className={styles.container}>
+        <h1 className={styles.title}>you may also like</h1>
         <Slider {...settings}>
           {DummyData.map((item, index) => (
             <ProductCard

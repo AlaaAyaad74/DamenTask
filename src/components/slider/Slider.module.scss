@@ -3,6 +3,20 @@
   margin: auto;
   margin-bottom: 2rem;
 }
+.title {
+  width: 362px;
+  height: 60px;
+  top: 748px;
+  left: 0px;
+  text-transform: capitalize;
+  left: 124px;
+  //   font-family: Montserrat;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 60px;
+  text-align: left;
+  margin-bottom: 20px;
+}
 @media (max-width: 1100px) {
   .container {
     width: calc(268px * 3);
@@ -16,5 +30,8 @@
 @media (max-width: 600px) {
   .container {
     width: 268px;
+  }
+  .title {
+    margin-left: -45px;
   }
 }
