@@ -55,6 +55,8 @@ export default class SliderProduct extends Component {
               description={item.description}
               rate={item.rate}
               price={item.price}
+              /**/
+              item={item}
             />
           ))}
         </Slider>

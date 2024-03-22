@@ -5,7 +5,7 @@ import StarsComponent from "./../common/StarsComponent";
 import BuyButton from "../common/BuyButton";
 export default class productCard extends Component {
   render() {
-    const { image, model, description, rate, price } = this.props;
+    const { image, model, description, rate, price, item } = this.props;
     return (
       <div className={styles.card_Cont}>
         <img className={styles.image} src={`${image}`} alt="product" />
@@ -26,6 +26,7 @@ export default class productCard extends Component {
           style={styles.addCartBtn}
           textStyle={styles.text}
           text={"Add to cart"}
+          item={item}
         />
         <span className={styles.fav_Icon}>
           <svg

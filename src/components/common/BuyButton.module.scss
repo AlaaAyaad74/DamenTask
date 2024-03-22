@@ -3,11 +3,12 @@
   color: #ffffff;
   background-color: var(--primary-color);
   border-radius: 11.51px;
-
+  cursor: pointer;
   /**/
 }
 .text {
   text-align: left;
   position: absolute;
   color: var(--secondary-color);
+  text-transform: uppercase;
 }

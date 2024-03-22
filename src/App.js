@@ -10,14 +10,19 @@ import Contactus from "./pages/Contactus";
 import Newarrival from "./pages/Newarrival";
 import Aboutus from "./pages/Aboutus";
 import LoadingPage from "./components/loadingcomp/LoadingPage";
+import { UserProvider } from "./components/UserContext";
 export default class App extends Component {
   constructor() {
     super();
     this.state = { loading: true };
   }
   componentDidMount() {
-    setTimeout(() => this.setState({ loading: false }), 2000);
-    console.log("ComponentdidMount");
+    const pathname = window.location.pathname;
+    if (pathname === "/") {
+      setTimeout(() => this.setState({ loading: false }), 2000);
+    } else {
+      this.setState({ loading: false });
+    }
   }
   render() {
     return (
@@ -27,7 +32,7 @@ export default class App extends Component {
             <LoadingPage />
           </>
         ) : (
-          <>
+          <UserProvider value={[]}>
             <Layout />
             <Router>
               <Routes>
@@ -39,7 +44,7 @@ export default class App extends Component {
                 <Route path="/aboutus" element={<Aboutus />} />
               </Routes>
             </Router>
-          </>
+          </UserProvider>
         )}
       </>
     );

@@ -34,10 +34,10 @@
 .center .cover {
   background: #353d6e;
   height: 100%;
-  width: 0;
+  width: 100%;
   animation-name: animation;
   animation-duration: 2s;
-  animation-iteration-count: infinite;
+  animation-iteration-count: 1;
 }
 @keyframes animation {
   0% {

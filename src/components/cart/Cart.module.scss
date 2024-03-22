@@ -108,3 +108,27 @@
     position: static;
   }
 }
+.cart_Empty {
+  text-align: center;
+  font-style: italic;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+// .productColumns {
+//   max-height: 360px;
+//   overflow-y: scroll;
+//   margin-top: 15px;
+// }
+.alert {
+  position: absolute;
+  text-transform: uppercase;
+  bottom: 18px;
+  width: 300px;
+  font-size: 14px;
+  color: #b93c3c;
+  text-align: center;
+}
