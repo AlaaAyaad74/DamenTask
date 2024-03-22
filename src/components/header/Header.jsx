@@ -80,7 +80,12 @@ export default class Header extends Component {
               <ul>
                 {links.map((item, index) => (
                   <li key={index}>
-                    <Link to={`${item.path}`}>{item.name}</Link>
+                    <Link
+                      to={`${item.path}`}
+                      onClick={() => this.toggleLinks()}
+                    >
+                      {item.name}
+                    </Link>
                   </li>
                 ))}
               </ul>
