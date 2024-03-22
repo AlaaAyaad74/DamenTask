@@ -1,0 +1,17 @@
+.mainTitle {
+  text-transform: uppercase;
+  animation-name: titleAnimation;
+  animation-duration: 2s;
+  animation-iteration-count: 2;
+  color: #b93c3c;
+  width: 100%;
+}
+@keyframes titleAnimation {
+  0% {
+    opacity: 0.4;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

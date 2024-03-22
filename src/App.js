@@ -14,7 +14,7 @@ import { UserProvider } from "./components/UserContext";
 export default class App extends Component {
   constructor() {
     super();
-    this.state = { loading: true };
+    this.state = { loading: true, arr: [] };
   }
   componentDidMount() {
     const pathname = window.location.pathname;
@@ -25,6 +25,7 @@ export default class App extends Component {
     }
   }
   render() {
+    // let arr = [];
     return (
       <>
         {this.state.loading ? (
@@ -32,7 +33,7 @@ export default class App extends Component {
             <LoadingPage />
           </>
         ) : (
-          <UserProvider value={[]}>
+          <UserProvider value={this.state.arr}>
             <Layout />
             <Router>
               <Routes>

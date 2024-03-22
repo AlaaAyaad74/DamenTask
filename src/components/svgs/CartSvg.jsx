@@ -5,11 +5,13 @@ import { UserConsumer } from "../UserContext";
 export default class CartSvg extends Component {
   constructor() {
     super();
-    this.state = { openCart: false };
+    this.state = { openCart: false, num: 0 };
   }
+
   toggleCart() {
     this.setState({ openCart: !this.state.openCart });
   }
+
   render() {
     return (
       <UserConsumer>
@@ -67,7 +69,9 @@ export default class CartSvg extends Component {
             ) : (
               ""
             )}
-            <span className={styles.counter_Circle}>{data.length}</span>
+            <span className={styles.counter_Circle}>
+              <p>{data.length}</p>
+            </span>
           </span>
         )}
       </UserConsumer>

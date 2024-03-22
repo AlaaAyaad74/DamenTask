@@ -1,7 +1,11 @@
 import React, { Component } from "react";
-
+import Page from "../components/PageComp/Page";
 export default class Newarrival extends Component {
   render() {
-    return <div>new arrival</div>;
+    return (
+      <>
+        <Page text={"New Arrival"} />
+      </>
+    );
   }
 }
