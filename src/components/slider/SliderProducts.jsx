@@ -6,7 +6,6 @@ import { DummyData } from "../../utils/service/DummyData";
 export default class SliderProduct extends Component {
   render() {
     var settings = {
-      //   className: "cont_Slider",
       dots: false,
       infinite: true,
       speed: 500,

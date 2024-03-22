@@ -2,7 +2,12 @@ import React, { Component } from "react";
 import "./index.scss";
 import Products from "./pages/Products";
 import HomePage from "./HomePage";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  BrowserRouter,
+} from "react-router-dom";
 
 import Layout from "./components/Layout";
 import Bestseller from "./pages/Bestseller";
@@ -11,11 +16,15 @@ import Newarrival from "./pages/Newarrival";
 import Aboutus from "./pages/Aboutus";
 import LoadingPage from "./components/loadingcomp/LoadingPage";
 import { UserProvider } from "./components/UserContext";
+import Header from "./components/header/Header";
 export default class App extends Component {
   constructor() {
     super();
     this.state = { loading: true, arr: [] };
   }
+  addItem = (newItem) => {
+    this.setState({ arr: [...this.state.arr, newItem] });
+  };
   componentDidMount() {
     const pathname = window.location.pathname;
     if (pathname === "/") {
@@ -24,8 +33,8 @@ export default class App extends Component {
       this.setState({ loading: false });
     }
   }
+
   render() {
-    // let arr = [];
     return (
       <>
         {this.state.loading ? (
@@ -33,9 +42,9 @@ export default class App extends Component {
             <LoadingPage />
           </>
         ) : (
-          <UserProvider value={this.state.arr}>
-            <Layout />
+          <UserProvider value={{ arr: this.state.arr, addItem: this.addItem }}>
             <Router>
+              <Layout />
               <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/products" element={<Products />} />

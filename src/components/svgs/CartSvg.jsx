@@ -15,12 +15,13 @@ export default class CartSvg extends Component {
   render() {
     return (
       <UserConsumer>
-        {(data) => (
+        {({ arr }) => (
           <span
             style={{ position: "relative" }}
             className={styles.icon}
             onClick={() => this.toggleCart()}
           >
+            {console.log(arr)}
             <svg
               width="24"
               height="24"
@@ -70,7 +71,7 @@ export default class CartSvg extends Component {
               ""
             )}
             <span className={styles.counter_Circle}>
-              <p>{data.length}</p>
+              <p>{arr.length}</p>
             </span>
           </span>
         )}
